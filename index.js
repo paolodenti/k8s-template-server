@@ -9,12 +9,17 @@ const app = express();
 const port = process.env.PORT || 8080;
 const mongoHost = process.env.MONGO_HOST || "localhost";
 const mongoDb = process.env.MONGO_DB || "test";
+const mongoUsername = process.env.MONGO_USERNAME;
+const mongoPassword = process.env.MONGO_PASSWORD;
 
 const main = async () => {
     return new Promise((_resolve, reject) => {
         app.use(express.json());
 
-        const dbURI = `mongodb://${mongoHost}/${mongoDb}`;
+        const dbURI =
+            mongoUsername || mongoPassword
+                ? `mongodb://${mongoUsername}:${mongoPassword}@${mongoHost}/${mongoDb}`
+                : `mongodb://${mongoHost}/${mongoDb}`;
 
         mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
         mongoose.connection.on("connected", function () {

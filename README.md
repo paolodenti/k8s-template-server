@@ -7,6 +7,8 @@ Test REST API, Node, Mongo, Express
 `PORT`: http post, default to `8080`
 `MONGO_HOST`: mongo host name, defaults to `localhost`
 `MONGO_DB`: mongo database name, defaults to test
+`MONGO_USERNAME`: optional mongo database username
+`MONGO_PASSWORD`: optional mongo database password
 
 * GET `/api/posts`
 * POST `/api/posts`

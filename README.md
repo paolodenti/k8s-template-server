@@ -22,6 +22,6 @@ A post is
 ```json
 {
     "title": "the post title",
-    "content": "the post content"
+    "body": "the post body"
 }
 ```

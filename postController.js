@@ -43,7 +43,7 @@ exports.update = (req, res) => {
     Post.findById(req.params.post_id, (err, post) => {
         if (err) res.send(err);
         post.title = req.body.title ? req.body.title : post.title;
-        post.content = req.body.content;
+        post.body = req.body.body;
 
         post.save(err => {
             if (err) {

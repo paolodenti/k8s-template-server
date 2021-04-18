@@ -14,3 +14,12 @@ Test REST API, Node, Mongo, Express
 * PUT `/api/posts/:id`
 * PATCH `/api/posts/:id`
 * DELETE `/api/posts/:id`
+
+A post is
+
+```json
+{
+    "title": "the post title",
+    "content": "the post content"
+}
+```

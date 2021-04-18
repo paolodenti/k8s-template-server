@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 
 const apiRoutes = require("./api-routes");
@@ -36,6 +37,11 @@ const main = async () => {
         mongoose.connection.on("disconnected", function () {
             console.log("Mongoose default connection disconnected");
         });
+
+        if (process.env.CORS_ON === "true") {
+            // development mode
+            app.use(cors());
+        }
 
         app.use("/api", apiRoutes);
         app.use("*", defaultRoute);

@@ -9,6 +9,7 @@ Test REST API, Node, Mongo, Express
 `MONGO_DB`: mongo database name, defaults to test
 `MONGO_USERNAME`: optional mongo database username
 `MONGO_PASSWORD`: optional mongo database password
+`CORS_ON`: if `"true"`, cors is enabled and the api can be used in development. Defaults to false
 
 * GET `/api/posts`
 * POST `/api/posts`

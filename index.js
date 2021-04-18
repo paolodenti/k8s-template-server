@@ -18,12 +18,12 @@ const main = async () => {
 
         const dbURI =
             mongoUsername || mongoPassword
-                ? `mongodb://${mongoUsername}:${mongoPassword}@${mongoHost}/${mongoDb}`
+                ? `mongodb://${mongoUsername}:${mongoPassword}@${mongoHost}/${mongoDb}?authSource=admin`
                 : `mongodb://${mongoHost}/${mongoDb}`;
 
         mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
         mongoose.connection.on("connected", function () {
-            console.log("Mongoose default connection open to " + dbURI);
+            console.log("Mongoose default connection open");
         });
 
         // If the connection throws an error

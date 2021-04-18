@@ -1,6 +1,10 @@
 # Test REST API for K8s template
 
-Test REST API, Node, Mongo, Express
+REST API backend template for [https://github.com/paolodenti/k8s-template](https://github.com/paolodenti/k8s-template)
+
+* Node
+* Express
+* Mongoose
 
 ## Environment variables
 

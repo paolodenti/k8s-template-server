@@ -27,7 +27,6 @@ const main = async () => {
             console.log("Mongoose default connection open");
         });
 
-        // If the connection throws an error
         mongoose.connection.on("error", function (err) {
             console.log("Mongoose default connection error: " + err);
             return reject(new Error("Error connecting to db"));
@@ -39,7 +38,7 @@ const main = async () => {
         });
 
         if (process.env.CORS_ON === "true") {
-            // development mode
+            // exposed directly as rest api or development mode
             app.use(cors());
         }
 
